@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link
+   rel="stylesheet"
+   href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+   integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+   crossorigin="anonymous"
+  />
+ </head>
+ <body style="display: flex; gap: 30px; flex-wrap: wrap">
+  
+  <script type="module">
+   import {data} from "./data.js";
+   for (let index = 0; index < 8; index++) {
+   let card = document.createElement("div");
+   card.style.width = "18rem";
+   card.classList = "card";
+   document.body.append(card);
+   let image = document.createElement("img");
+   image.alt="Card image cap";
+   image.src="...";
+   image.classList = "card-img-top custom-image"
+   card.append(image);
+   document.getElementsByClassName("custom-image")[index].src =
+   data[index].images;
+   let cardBody = document.createElement("div");
+   cardBody.classList = "card-body";
+   card.append(cardBody);
+   let cardTitle = document.createElement("h5");
+   cardTitle.classList = "custom-title card-title";
+   cardBody.append(cardTitle);
+   cardTitle.textContent = "Card title";
+   document.getElementsByClassName("card-title")[index] = data[index].title;
+   let cardText = document.createElement("p");
+   cardText.classList = "card-text custom-description";
+   cardBody.append(cardText);
+   cardText.textContent = "Some quick example text to build on the card title and make up the bulk of the cards content.";
+   document.getElementsByClassName("card-text")[index] = data[index].description;
+   let btnPrimary = document.createElement("a");
+   btnPrimary.style.color = "#fff";
+   btnPrimary.classList = "btn btn-primary";
+   cardBody.append(btnPrimary);
+   btnPrimary.textContent = "Go somewhere";
+   document.getElementsByClassName("btn btn-primary")[index] = data[index].thumbnail;
+
+   }
+  </script>
+  <script
+   src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+   integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+   crossorigin="anonymous"
+  ></script>
+  <script
+   src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+   integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+   crossorigin="anonymous"
+  ></script>
+  <script
+   src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+   crossorigin="anonymous"
+  ></script>
+ </body>
+</html>
